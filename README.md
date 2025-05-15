@@ -22,41 +22,15 @@ A RESTful API for managing students and their enrolled courses built with FastAP
 - Alembic: Database migration tool
 - pytest: Testing framework
 
-## Project Structure
-
-\`\`\`
-student-course-api/
-├── app/
-│   ├── __init__.py
-│   ├── main.py           # FastAPI application
-│   ├── models.py         # SQLAlchemy models
-│   ├── schemas.py        # Pydantic models
-│   ├── database.py       # Database connection
-│   └── tests/            # Unit tests
-│       └── test_api.py
-├── alembic/              # Database migrations
-├── alembic.ini           # Alembic configuration
-└── requirements.txt      # Project dependencies
-\`\`\`
 
 ## Installation
 
 1. Clone the repository:
-\`\`\`bash
-git clone https://github.com/yourusername/student-course-api.git
-cd student-course-api
-\`\`\`
 
 2. Create and activate a virtual environment:
-\`\`\`bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-\`\`\`
 
 3. Install dependencies:
-\`\`\`bash
 pip install -r requirements.txt
-\`\`\`
 
 4. Configure the database:
    - For SQLite (development/testing): No additional configuration needed
@@ -66,19 +40,14 @@ pip install -r requirements.txt
      - Update the database URL in `app/database.py` and `alembic.ini`
 
 5. Run database migrations:
-\`\`\`bash
-alembic revision --autogenerate -m "Initial migration"
-alembic upgrade head
-\`\`\`
+    alembic revision --autogenerate -m "Initial migration"
+    alembic upgrade head
+
 
 ## Running the Application
 
 Start the FastAPI server:
-
-\`\`\`bash
-uvicorn app.main:app --reload
-\`\`\`
-
+  uvicorn app.main:app --reload
 The API will be available at http://127.0.0.1:8000
 
 ## API Documentation
@@ -102,11 +71,9 @@ FastAPI automatically generates interactive API documentation:
 ## Running Tests
 
 Run the test suite:
-
-\`\`\`bash
 pytest
-\`\`\`
 
+## Live API: https://student-management-course-api.onrender.com
 ## Using PostgreSQL in Production
 
 To use PostgreSQL in production:
@@ -115,3 +82,5 @@ To use PostgreSQL in production:
 2. Update the connection details with your PostgreSQL credentials
 3. Install the PostgreSQL driver by uncommenting `psycopg2-binary` in `requirements.txt`
 4. Update the database URL in `alembic.ini`
+
+
