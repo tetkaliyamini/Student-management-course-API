@@ -1,0 +1,14 @@
+{
+  "name": "student-course-api",
+  "env": {
+    "PYTHON_VERSION": {
+      "description": "Python version",
+      "value": "3.9.18"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
